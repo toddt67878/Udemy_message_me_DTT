@@ -1,4 +1,4 @@
-<h4 class="ui center aligned medium image header">
+<h4 class="ui center aligned medium icon header">
   <i class="Home_leaf_jpg_image"></i>
   Say Something
 </h4>
@@ -8,34 +8,15 @@
     <div class="ui fluid raised card chatbox">
       <div class="content">
         <div class="ui feed">
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <a>Todd Traylor</a> added <a>Joy Palmer-Traylor/a> as a friend
+          <% @messages.each do |message| %>
+            <div class="event">
+              <div class="content">
+                <div class="summary">
+                  <em><%= message.user.username %></em>: <%= message.body %>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <a>Joy Palmer-Traylor</a> added <a>Ginger the Cat</a> as a friend
-               </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <a>Ginger the Cat</a> added <a>Jasmine the Cat</a> as a friend
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <em>Ginger the Cat</em>: Test message
-              </div>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
       <div class="extra content">
